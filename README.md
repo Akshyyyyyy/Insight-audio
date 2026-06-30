@@ -47,34 +47,40 @@ Follow these steps to set up and run the Podcast AI System on your local machine
   * *Windows:* Install via Chocolatey (`choco install ffmpeg`) or download directly and add to your System PATH.
   * *Mac:* `brew install ffmpeg`
 
-### 1. Clone the Repository
+## ⚙️ Installation & Setup
+
+Follow these steps to set up and run the Podcast AI System on your local machine.
+
+### 📋 Prerequisites
+
+* **Python 3.10+**
+* **FFmpeg:** Required by OpenAI's Whisper model for audio processing[cite: 11].
+  * *Windows:* Install via Chocolatey (`choco install ffmpeg`) or download directly and add to your System PATH.
+  * *Mac:* `brew install ffmpeg`
+
+---
+
+### 🏃‍♂️ Step-by-Step Guide
+
+#### 1. Clone the Repository
 ```bash
-git clone [https://github.com/Akshyyyyyy/Insight-audio.git](https://github.com/Akshyyyyyy/Insight-audio.git)
+git clone https://github.com/Akshyyyyyy/Insight-audio.git
 cd Insight-audio
-
 2. Set Up a Virtual Environment & Dependencies
-
-Create and activate the virtual environment, then install the packages listed in your requirements file:
-# Create the environment
+Create and activate the virtual environment, then install the packages listed in your requirements file:  Bash# Create the environment
 python -m venv podcast_env
 
 # Activate the environment
 # On Windows (PowerShell):
 .\podcast_env\Scripts\Activate.ps1
+
 # On Mac/Linux:
 source podcast_env/bin/activate
 
 # Install required packages
 pip install -r requirements.txt
-
 3. Set Up Local AI Models
-This system runs entirely locally for privacy and cost-efficiency.  
-Ollama (LLM Engine): Download and install Ollama. Once running, pull the Qwen model used for generating answers and summaries: 
+This system runs entirely locally for privacy and cost-efficiency.  Ollama (LLM Engine): Download and install Ollama. Once running, pull the Qwen model used for generating answers and summaries:  Bashollama pull qwen2.5:7b
+Whisper & SentenceTransformers: The Whisper small model and the all-MiniLM-L6-v2 embedding model will automatically download to your machine the first time you run the application.  
 
-ollama pull qwen2.5:7b
-
-Whisper & SentenceTransformers: The Whisper small model and the all-MiniLM-L6-v2 embedding model will automatically download to your machine the first time you run the application
-
-4. Run the Application
-Start the interactive CLI menu:
-python main.py
+4. Run the ApplicationStart the interactive CLI menu:  Bashpython main.py
